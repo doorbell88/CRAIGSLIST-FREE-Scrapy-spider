@@ -11,7 +11,8 @@ to reflect your own city/zip
 import scrapy
 import os
 
-number_of_listings = 5
+# If you want to limit the results displayed...
+# number_of_listings = 10
 
 
 class FreeSpider(scrapy.Spider):
@@ -43,8 +44,8 @@ class FreeSpider(scrapy.Spider):
             print listing.css('a::attr(href)').extract()[0]
             print
 
-            if i >= number_of_listings:
-                os.system('tput sgr0')
-                exit()
+            # if i >= number_of_listings:
+            #     os.system('tput sgr0')
+            #     exit()
 
 
