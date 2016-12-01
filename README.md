@@ -1,7 +1,7 @@
 # CRAIGSLIST-FREE-Scrapy-spider
 A spider written with Scrapy that finds the first page of newest "Craigslist Free" posts and outputs them to terminal.
 
-    usage:  free [arguments]
+    usage:          free [arguments]
                 
     examples:       free 7                  -- displays the 7 newest posts
                     free table              -- displays any posts with "table" in them (letter case does not matter)
