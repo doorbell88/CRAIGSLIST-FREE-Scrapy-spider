@@ -4,7 +4,7 @@ A spider written with Scrapy that finds the first page of newest "Craigslist Fre
     usage:          free [arguments]
                 
     examples:       free 7                  -- displays the 7 newest posts
-                    free table              -- displays any posts with "table" in them (letter case does not matter)
+                    free table              -- displays any posts with "table" in them (case does not matter)
                     free table computer     -- displays any posts with "table", and then any with "computer"
                     free "computer table"   -- displays any posts with "computer table" in them
                     free 7 table            -- displays newest 7 posts, and then any with "table" in them
