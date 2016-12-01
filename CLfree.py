@@ -18,7 +18,8 @@ import os
 class FreeSpider(scrapy.Spider):
     name = "CLfree"
     start_urls = [
-        'http://boulder.craigslist.org/search/zip?query=80304',
+        # 'http://boulder.craigslist.org/search/zip?query=80304',
+        'http://boulder.craigslist.org/search/zip?search_distance=25&postal=80304',
     ]
 
 
@@ -41,7 +42,12 @@ class FreeSpider(scrapy.Spider):
             # LINK
             print "\t",
             os.system('tput setaf 6')
-            print listing.css('a::attr(href)').extract()[0]
+            link_suffix = listing.css('a::attr(href)').extract()[0]
+            # if link_suffix[1] != "/":
+            #     print link_suffix[1:]
+            # else
+            #     print "http://boulder.craigslist.org"+link_suffix
+            print "http://boulder.craigslist.org"+link_suffix
             print
 
             # if i >= number_of_listings:

@@ -28,15 +28,12 @@ while [ "$1" != "" ]; do
 	# if you put a number, display first (number) results
 	if [[ $1 =~ ^-?[0-9]+$ ]]; then
 		length=$1
-
-		tput setaf 3
 		scrapy crawl CLfree 2>/dev/null | head -n$((length * 3))
-		tput sgr0
 	
 	# if you put a search term, display results with that term
 	elif [ -n "$1" ]; then
 		search_item="$1"
-		tput sgr0
+		tput setaf 7	# white
 		# Send the spider
 		scrapy crawl CLfree 2>/dev/null | grep -A1 -i "$search_item"
 		echo
